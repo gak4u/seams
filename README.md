@@ -30,7 +30,7 @@ Sea-M-S provides the following features:
 - Support for multiple content types and fields
 - Customizable templates for displaying your content on your website
 - User authentication and authorization
-- Integration with popular databases like MongoDB and PostgreSQL
+- Integration with MongoDB
 
 ## Contributing
 
