@@ -8,7 +8,7 @@ To get started with Sea-M-S, you can follow these steps:
 
 1. Clone the Sea-M-S repository to your local machine:
 ```bash
-git clone https://github.com/your-username/sea-m-s.git
+git clone https://github.com/gak4u/sea-m-s.git
 ```
 
 2. Install the dependencies using npm:
