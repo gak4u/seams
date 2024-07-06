@@ -1,0 +1,16 @@
+{
+  "name": "@seams",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"bun run --cwd packages/server dev\" \"bun run --cwd packages/client dev\""
+  },
+  "workspaces": ["packages/*", "apps/*"],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "concurrently": "^8.2.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
