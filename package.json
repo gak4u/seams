@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"bun run --cwd packages/server dev\" \"bun run --cwd packages/client dev\""
+    "dev": "concurrently \"bun index.ts\" \"bun run --cwd packages/client dev\""
   },
   "workspaces": ["packages/*", "apps/*"],
   "devDependencies": {

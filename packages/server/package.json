@@ -6,8 +6,9 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest",
-    "@seams/common": "workspace:*"
+    "@elysiajs/static": "^1.0.3",
+    "@seams/common": "workspace:*",
+    "elysia": "latest"
   },
   "devDependencies": {
     "bun-types": "latest"

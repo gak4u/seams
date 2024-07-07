@@ -1,10 +1,35 @@
 import { Elysia } from "elysia";
 import { Delete, Get, Patch, Post, Put, routes } from "./decorators/routes";
+import { staticPlugin } from '@elysiajs/static'
+import path from 'path';
+import fs from 'fs';
 
 const app = new Elysia();
+
+app.get('*', async (req) => {
+  try {
+    const filePath = path.resolve(__dirname, '../../../public', req.path === '/' ? 'index.html' : req.path.substring(1));
+    const data = fs.readFileSync(filePath);
+    const ext = path.extname(filePath).substring(1);
+    const contentType = {
+      'html': 'text/html',
+      'js': 'application/javascript',
+      'css': 'text/css',
+      'json': 'application/json',
+      'png': 'image/png',
+      'jpg': 'image/jpeg',
+      'gif': 'image/gif',
+      'svg': 'image/svg+xml',
+    }[ext] || 'application/octet-stream';
+
+    return new Response(data, { headers: { 'Content-Type': contentType } });
+  } catch (err) {
+    return new Response('Not Found', { status: 404 });
+  }
+});
 export function init(config: any) {
-  config.controllers.forEach(c => {
-    new c();
+  config.controllers.forEach(controller => {
+    new controller();
   });
   routes.forEach((route) => {
     switch (route.method) {
